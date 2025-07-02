@@ -2,11 +2,20 @@ from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
-
+import sys
+from dotenv import load_dotenv
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./mydatabase.db'
+load_dotenv()
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if not DATABASE_URL:
+    print("Error: The environment variable DATABASE_URL is not set.")
+    sys.exit(1)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
 print("Database URI resolved to:", app.config['SQLALCHEMY_DATABASE_URI'])
 
 class ToDo(db.Model):
