@@ -15,7 +15,7 @@ class ToDo(db.Model):
     Date_Created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"<Task: {self.content}>"
+        return f"<Task: {self.id}>"
 
 @app.route('/', methods=['POST', 'GET'])
 @app.route('/home')
