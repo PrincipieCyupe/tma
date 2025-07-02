@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Update Page
+{% endblock %}
+
+{% block body %}
+  <div class="heading">
+    <h1>UPDATE TASKS</h1>
+    <nav>
+      <ol>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact us</a>
+      </ol>
+    </nav>
+    </div>
+
+  {% if task %}
+    <form action="/" method="POST">
+        <input type="content" name="content" id="content" value="{{task.content}}">
+        <input type="submit" value="Update task"> 
+    </form>
+  {% endif %}
+   
+ {% endblock %}
