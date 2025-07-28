@@ -36,5 +36,6 @@ flask run
 ```
 
 Visit http://127.0.0.1:5000 in your browser.
+or visit it online via https://tma-3dor.onrender.com/
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5f9aeecc-12ec-4f2d-9275-52cb40bb4431" />
